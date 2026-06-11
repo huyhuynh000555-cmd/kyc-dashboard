@@ -119,10 +119,7 @@ def _read_raw_wide():
             import gspread
             from google.oauth2.service_account import Credentials
 
-            scope = [
-                "https://spreadsheets.google.com/feeds",
-                "https://www.googleapis.com/auth/drive",
-            ]
+            scope = ["https://www.googleapis.com/auth/spreadsheets.readonly"]
             creds = Credentials.from_service_account_info(
                 st.secrets["gcp_service_account"], scopes=scope
             )
